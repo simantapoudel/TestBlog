@@ -8,7 +8,7 @@ class Database
     private $db = 'blog';
 
     private $con = false; // Check to see if the connection is active
-    private $myconn = ""; // This will be our mysqli object
+    private $myconn = ""; // This will be mysqli object
 	private $result = array(); // Any results from a query will be stored here
     private $myQuery = "";// used for debugging process with SQL return
     private $numResults = "";// used for returning the number of rows
@@ -55,7 +55,7 @@ class Database
 			return true; // Query was successful
 		} else {
 			array_push($this->result,$this->myconn->error);
-			return false; // No rows where returned
+			return false; // No rows were returned
 		}
 	}
 
@@ -65,5 +65,4 @@ class Database
         $this->result = array();
         return $val;
     }
-	
 }
